@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Hyde</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: #f9f9f9;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e5e5;
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4a4a4a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 100px auto 4rem;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4a4a4a;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #4a4a4a;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: #f0f0f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .contact {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .contact a {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .privacy-link {
+            color: #1a1a1a;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+                display: none;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .content {
+                margin: 80px 1rem 2rem;
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">HYDE</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Hyde Terms of Use</h1>
+
+        <div class="highlight">
+            <p><strong>By using this app, you agree to these terms. Simple, straightforward, no surprises.</strong></p>
+        </div>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By using this app, you agree to these Terms of Use. If you don't agree, please stop using the app.</p>
+
+        <h2>2. Paid Features & Subscriptions</h2>
+        <p>Some features require a paid subscription or one-time purchase.</p>
+        <ul>
+            <li>Prices are shown clearly in the app.</li>
+            <li>Payment is charged to your Apple ID.</li>
+            <li>Subscriptions renew automatically unless you cancel at least 24 hours before the renewal date.</li>
+            <li>You can manage or cancel your subscription anytime in your Apple ID settings.</li>
+        </ul>
+
+        <h2>3. No Refunds</h2>
+        <p>All purchases are final. Refunds are handled by Apple according to their policies.</p>
+
+        <h2>4. Your Responsibilities</h2>
+        <p>You agree not to misuse the app, attempt to break it, reverse-engineer it, or use it for anything illegal.</p>
+
+        <h2>5. Privacy</h2>
+        <p>We do not collect any personal information from you. Any data usage is strictly as described in our <a href="privacy-policy.html" class="privacy-link">Privacy Policy</a>.</p>
+        <p>Link to Privacy Policy: <a href="https://www.angsanadigital.com/privacy-policy" class="privacy-link">https://www.angsanadigital.com/privacy-policy</a></p>
+
+        <h2>6. Changes to the App or Terms</h2>
+        <p>We may update features or these terms at any time. If you keep using the app after changes, it means you accept them.</p>
+
+        <h2>7. No Guarantees</h2>
+        <p>The app is provided "as is." We don't guarantee uptime, performance, or that the app will meet your needs.</p>
+
+        <h2>8. Limitation of Liability</h2>
+        <p>We are not responsible for any loss, damage, or issues that come from using the app. Use it at your own risk.</p>
+
+        <h2>9. Contact</h2>
+        <div class="contact">
+            <p>If you have questions, email us at:</p>
+            <p><a href="mailto:zordan@angsanadigital.com">zordan@angsanadigital.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
