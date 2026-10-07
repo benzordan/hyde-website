@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
     <title>Privacy Policy - Hyde</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <style>
         * {
             margin: 0;
@@ -44,6 +47,14 @@
             color: #1a1a1a;
             text-decoration: none;
             letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
         }
 
         .nav-links {
@@ -177,7 +188,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">HYDE</a>
+            <a href="index.html" class="logo"><img src="images/hyde-icon.webp" alt="">HYDE</a>
             <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>

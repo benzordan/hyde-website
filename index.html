@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
     <title>Hyde - Your secrets, safe forever</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <style>
         * {
             margin: 0;
@@ -14,6 +17,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             color: #1a1a1a;
+            background: white;
             line-height: 1.6;
         }
 
@@ -43,6 +47,14 @@
             color: #1a1a1a;
             text-decoration: none;
             letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
         }
 
         .nav-links {
@@ -70,13 +82,35 @@
             justify-content: center;
             background: linear-gradient(135deg, #0a0a0a 0%, #2d2d2d 100%);
             color: white;
-            padding: 2rem;
+            padding: 5rem 2rem 2rem;
             margin-top: 70px;
         }
 
         .hero-content {
             max-width: 800px;
             text-align: center;
+        }
+
+        .app-icon {
+            display: block;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.5));
+        }
+
+        .app-icon-pro {
+            width: 112px;
+            height: 112px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 10px 40px rgba(201, 162, 77, 0.35));
+        }
+
+        .app-icon-small {
+            width: 88px;
+            height: 88px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.18));
         }
 
         .hero h1 {
@@ -148,6 +182,286 @@
             margin: 0;
         }
 
+        /* Feature Sections */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #666666;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-pro .eyebrow {
+            color: #a8a8a8;
+        }
+
+        .section h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            color: #5c5c5c;
+            max-width: 520px;
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-head .lead {
+            margin: 0 auto;
+        }
+
+        .pro-badge {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.4rem;
+            padding: 0.1rem 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #e3c77d, #b8913f);
+            border-radius: 999px;
+        }
+
+        /* Security: split layout with divided list */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .split-intro {
+            position: sticky;
+            top: 120px;
+        }
+
+        .detail-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2.5rem;
+        }
+
+        .detail-list li {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .detail-icon {
+            font-size: 1.4rem;
+            line-height: 1.3;
+        }
+
+        .detail-list h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-list p {
+            color: #5c5c5c;
+            font-size: 0.95rem;
+        }
+
+        /* Library: borderless icon grid */
+        .section-library {
+            background: #f6f6f4;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem 2rem;
+        }
+
+        .icon-tile {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .icon-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .icon-item p {
+            color: #5c5c5c;
+            font-size: 0.95rem;
+        }
+
+        /* Pro: dark bento grid */
+        .section-pro {
+            background: linear-gradient(135deg, #0a0a0a 0%, #2d2d2d 100%);
+            color: white;
+        }
+
+        .section-pro .lead,
+        .section-pro p {
+            color: #b8b8b8;
+        }
+
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .bento-card {
+            padding: 1.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+        }
+
+        .bento-feature {
+            grid-column: span 2;
+            grid-row: span 2;
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+        }
+
+        .bento-icon {
+            display: block;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .bento-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .bento-feature h3 {
+            font-size: 1.6rem;
+            line-height: 1.25;
+        }
+
+        .bento-sub {
+            margin-top: 1.75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bento-sub h4 {
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .chips {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .chips li {
+            padding: 0.35rem 0.85rem;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 999px;
+        }
+
+        .pro-extras {
+            margin-top: 3.5rem;
+        }
+
+        .pro-extras-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .pro-extras-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .pro-extras-row > div {
+            padding-left: 1.25rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .pro-extras-row h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .pro-extras-row p {
+            font-size: 0.95rem;
+        }
+
+        /* Closing CTA */
+        .section-cta {
+            text-align: center;
+        }
+
+        .section-cta .lead {
+            margin: 0 auto 2rem;
+        }
+
+        .cta-dark {
+            background: #1a1a1a;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-dark:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 960px) {
+            .split {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .split-intro {
+                position: static;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bento {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bento-feature {
+                grid-row: auto;
+            }
+        }
+
         /* Mobile Menu */
         .mobile-menu-toggle {
             display: none;
@@ -185,11 +499,29 @@
 
             .hero {
                 margin-top: 60px;
-                padding: 1rem;
+                padding: 3rem 1rem 1rem;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .detail-list,
+            .bento,
+            .pro-extras-row {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-feature {
+                grid-column: auto;
+            }
+
+            .icon-grid {
+                gap: 2rem 1.25rem;
             }
         }
     </style>
@@ -198,7 +530,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">HYDE</a>
+            <a href="index.html" class="logo"><img src="images/hyde-icon.webp" alt="">HYDE</a>
             <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
@@ -211,25 +543,226 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <img src="images/hyde-icon.webp" alt="Hyde app icon" class="app-icon">
             <h1>Your secrets, safe forever</h1>
             <p class="tagline">Privacy you can trust</p>
-            <p>Complete privacy protection for your most personal moments. Military-grade encryption keeps your content safe. Only you have access — no cloud, no third parties.</p>
-            <a href="#" class="cta-button">Download on the App Store</a>
+            <p>Complete privacy protection for your most personal moments. AES-GCM encryption keeps your content safe, and your vault stays on your device — only you have access.</p>
+            <a href="https://apps.apple.com/app/hyde-photo-video-vault/id6758589237" class="cta-button">Download on the App Store</a>
 
             <div class="features-grid">
                 <div class="feature">
-                    <h3>🔒 Military-Grade Security</h3>
-                    <p>Unbreakable encryption keeps your content protected</p>
+                    <h3>🔐 Encrypted Storage</h3>
+                    <p>Protect your private photos and videos with AES-GCM encryption.</p>
                 </div>
                 <div class="feature">
-                    <h3>📱 100% Offline</h3>
-                    <p>Your files never leave your device</p>
+                    <h3>📱 Stored on Your Device</h3>
+                    <p>Keep your vault locally, without automatic cloud uploads.</p>
                 </div>
                 <div class="feature">
-                    <h3>♾️ Unlimited Storage</h3>
-                    <p>Store as many photos and videos as you need</p>
+                    <h3>🎁 15GB Free</h3>
+                    <p>Start with 15GB at no cost. Go Pro to use as much space as your device allows.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Security -->
+    <section class="section section-security">
+        <div class="container split">
+            <div class="split-intro">
+                <p class="eyebrow">Security</p>
+                <h2>Only you get in.</h2>
+                <p class="lead">Your PIN, your biometrics, and your rules for when Hyde locks.</p>
+            </div>
+            <ul class="detail-list">
+                <li>
+                    <span class="detail-icon">🔢</span>
+                    <div>
+                        <h3>Your PIN. Your Privacy.</h3>
+                        <p>Protect your main vault with a personal six-digit PIN.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="detail-icon">👤</span>
+                    <div>
+                        <h3>Optional Biometric Unlock</h3>
+                        <p>Open your chosen vault with Face ID or Touch ID on supported devices.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="detail-icon">⏱</span>
+                    <div>
+                        <h3>Your Lock Schedule</h3>
+                        <p>Choose when Hyde locks after you leave the app.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="detail-icon">🔒</span>
+                    <div>
+                        <h3>Lock Instantly</h3>
+                        <p>Close access to your vault whenever you need to.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="detail-icon">🛡</span>
+                    <div>
+                        <h3>Incorrect PIN Protection</h3>
+                        <p>Automatic cooldowns slow repeated incorrect PIN attempts.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="detail-icon">💾</span>
+                    <div>
+                        <h3>Encrypted Backup &amp; Restore</h3>
+                        <p>Create a password-protected backup you can restore later.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="detail-icon">🗝</span>
+                    <div>
+                        <h3>A Separate Vault <span class="pro-badge">Pro</span></h3>
+                        <p>Keep another collection behind its own PIN.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Library -->
+    <section class="section section-library">
+        <div class="container">
+            <div class="section-head">
+                <p class="eyebrow">Your library</p>
+                <h2>Organized the way you like it.</h2>
+                <p class="lead">Import, sort, and revisit your media without it ever leaving the vault.</p>
+            </div>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <span class="icon-tile">📥</span>
+                    <h3>Easy Imports</h3>
+                    <p>Bring media from your Photos library into your private vault.</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-tile">🗂</span>
+                    <h3>Folders</h3>
+                    <p>Create folders, move files, and keep everything in its place.</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-tile">❤️</span>
+                    <h3>Favourites</h3>
+                    <p>Find the photos and videos you return to most.</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-tile">🔍</span>
+                    <h3>Search &amp; Sort</h3>
+                    <p>Reach the right moment faster.</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-tile">▦</span>
+                    <h3>Grid or Timeline</h3>
+                    <p>Switch between a familiar grid and a flowing timeline.</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-tile">↔</span>
+                    <h3>Grouped Moments</h3>
+                    <p>Swipe through timeline rows grouped by capture day and nearby times.</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-tile">▶</span>
+                    <h3>Full-Screen Viewing</h3>
+                    <p>Enlarge photos, zoom in, and play videos.</p>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-tile">♻</span>
+                    <h3>Recently Deleted</h3>
+                    <p>Review removed media, restore it, or permanently delete it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pro -->
+    <section class="section section-pro">
+        <div class="container">
+            <div class="section-head">
+                <img src="images/hyde-pro-icon.webp" alt="Hyde Pro icon" class="app-icon app-icon-pro">
+                <p class="eyebrow">Hyde Pro</p>
+                <h2>A camera that doesn't look like one.</h2>
+                <p class="lead">Capture straight into your vault while your screen shows something else entirely.</p>
+            </div>
+            <div class="bento">
+                <div class="bento-card bento-feature">
+                    <span class="bento-icon">📰</span>
+                    <h3>A Different Camera View</h3>
+                    <p>Hide the camera preview behind a scrollable overlay.</p>
+                    <div class="bento-sub">
+                        <h4>🗞 Choose your overlay</h4>
+                        <ul class="chips">
+                            <li>World headlines</li>
+                            <li>S&amp;P 500 prices</li>
+                            <li>Sports</li>
+                            <li>4D &amp; TOTO results</li>
+                        </ul>
+                    </div>
+                    <div class="bento-sub">
+                        <h4>🎞 Or create your own</h4>
+                        <p>Build a sideways-scrolling gallery from photos and videos in Photos.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-icon">📷</span>
+                    <h3>Built-In Camera</h3>
+                    <p>Capture photos and videos directly into Hyde.</p>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-icon">🎙</span>
+                    <h3>Your Voice Is the Shutter</h3>
+                    <p>Say your chosen phrase to take a photo or start and stop video.</p>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-icon">🔎</span>
+                    <h3>Adjustable Zoom</h3>
+                    <p>Choose your zoom level before capturing the moment.</p>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-icon">📍</span>
+                    <h3>Time &amp; Location</h3>
+                    <p>Add a timestamp and address to captured photos, in your preferred date format.</p>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-icon">🎛</span>
+                    <h3>Capture Your Way</h3>
+                    <p>Volume-button capture, a chosen save folder, and an Action Button shortcut on supported iPhones.</p>
+                </div>
+            </div>
+
+            <div class="pro-extras">
+                <p class="pro-extras-label">Also with Pro</p>
+                <div class="pro-extras-row">
+                    <div>
+                        <h3>🌐 Private Browser</h3>
+                        <p>Browse with a temporary session that clears when your vault closes.</p>
+                    </div>
+                    <div>
+                        <h3>🗝 A Separate Vault</h3>
+                        <p>Keep another collection behind its own PIN.</p>
+                    </div>
+                    <div>
+                        <h3>∞ Expanded Storage</h3>
+                        <p>Store as much as your device's available space allows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="section section-cta">
+        <div class="container">
+            <img src="images/hyde-icon.webp" alt="" class="app-icon app-icon-small">
+            <h2>Keep your private moments private.</h2>
+            <p class="lead">Start free with 15GB of encrypted storage.</p>
+            <a href="https://apps.apple.com/app/hyde-photo-video-vault/id6758589237" class="cta-button cta-dark">Download on the App Store</a>
         </div>
     </section>
 
