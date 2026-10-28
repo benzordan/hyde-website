@@ -219,17 +219,18 @@
     <!-- Content -->
     <div class="content">
         <h1>Hyde Privacy Policy</h1>
-        <p class="updated">Last updated: 20 October 2026. Applies to Hyde version 1.4 and later.</p>
+        <p class="updated">Last updated: 28 October 2026. Applies to Hyde version 1.5 and later.</p>
 
         <div class="highlight">
-            <p><strong>The short version:</strong> your vault (photos, videos, files and PINs) is encrypted and stays on your device. We can't see it. Hyde collects a limited amount of usage and diagnostic data so we can improve the app and fix problems. If you choose to share a collection, the photos you share are uploaded to our server until the link expires. This policy explains exactly what is collected and why.</p>
+            <p><strong>The short version:</strong> your vault (photos, videos, files and PINs) is encrypted and stays on your device. We can't see it. Hyde collects a limited amount of usage and diagnostic data so we can improve the app and fix problems. If you choose to share a collection, the photos and videos you share are uploaded to our servers until the link expires. This policy explains exactly what is collected and why.</p>
         </div>
 
         <h2>1. What Stays on Your Device</h2>
         <ul>
             <li><strong>Your vault.</strong> Photos, videos, documents and folder names are encrypted on your device with AES-GCM. Encryption keys and PINs are kept in your device's Keychain. We have no copy of your keys and cannot see, recover or restore your vault.</li>
             <li><strong>Camera, microphone, photo library and Face ID.</strong> These are used on your device only to do what you ask, such as taking a photo or importing a video. Face ID is handled by Apple; we never receive biometric data.</li>
-            <li><strong>Device backups.</strong> Encrypted vault files can be included in your iCloud or computer backups. They stay encrypted in those backups.</li>
+            <li><strong>Device backups.</strong> Vault files are excluded from iCloud and computer backups, so they stay on this device. To keep a copy, use Hyde's password-protected backup.</li>
+            <li><strong>Sharing or saving outside Hyde.</strong> When you share photos and videos from your vault or save them to Photos, Hyde removes where they were taken unless you turn on Include location for that export.</li>
             <li><strong>Vault backups you export.</strong> These are encrypted with a password you choose and saved wherever you choose. If you save one to a cloud service, that service's privacy policy applies to the file.</li>
         </ul>
 
@@ -258,14 +259,17 @@
         <h3>Shared collections (optional, Hyde Pro)</h3>
         <p>Nothing leaves your vault unless you choose to share a collection. When you do:</p>
         <ul>
-            <li><strong>What is uploaded:</strong> the photos you select, the folder names, and the collection title and description you enter. Photo file names are replaced with generic names such as "Photo 1.jpg". Original photos are shared as they are, including any information stored in the photo file, such as the date it was taken, camera details and location.</li>
-            <li><strong>Who can see it:</strong> anyone with the link can preview the folder names, file names, photo count and reduced thumbnails (thumbnails have their stored information removed). Importing the original photos requires Hyde Pro.</li>
-            <li><strong>Encryption:</strong> shared copies are encrypted in transit and while stored on our server, but they are not end-to-end encrypted, because automated safety checks need to read them.</li>
-            <li><strong>Safety checks:</strong> a collection becomes available only after its files pass automated checks by third-party services: Thorn Safer for known child sexual abuse material, Sightengine for explicit or violent content, and Cloudmersive for malware. We do not manually review your files. Collections that fail stay blocked, and we report apparent child sexual abuse material to the authorities where the law requires. Anyone with the link can report a collection, and reported collections can be blocked automatically.</li>
-            <li><strong>How long it is kept:</strong> a collection expires after 14 days, or sooner if you revoke the link in the app. Access stops immediately, and our cleanup process then deletes the stored files.</li>
-            <li><strong>Verifying your subscription:</strong> to confirm Hyde Pro and limit the number of active collections, the app sends your anonymous subscription ID, a signed App Store transaction, and a random credential created on your device. We store only a scrambled (hashed) version of that credential.</li>
-            <li><strong>Recipients:</strong> when someone opens or imports a collection, the app records anonymous events (for example "preview opened" or "import completed") with a random identifier and no file names. These events are deleted after 30 days. Reporting a collection uses a session cookie so the same person can't report it twice.</li>
-            <li><strong>Hosting:</strong> the collections service runs with a third-party hosting provider, which processes requests, including IP addresses, to deliver the service.</li>
+            <li><strong>What is uploaded:</strong> the photos and videos you select, small preview images made on your device, the folder names, and the title and description you enter. Before anything is uploaded, Hyde removes location, camera and date information from each photo and video, and replaces file names with generic names such as "Photo 1.jpg".</li>
+            <li><strong>Your confirmation:</strong> before a link is created, you confirm that everyone shown is 18 or older and agreed to the sharing. We record that you confirmed, and when.</li>
+            <li><strong>Who can see it:</strong> anyone with the link can see the folder names, file names, counts, sizes and preview images. Previews that may show nudity stay hidden until the viewer confirms they're 18 or older. Importing the full photos and videos requires Hyde Pro.</li>
+            <li><strong>Encryption:</strong> shared copies are encrypted in transit and while stored on our servers, but they are not end-to-end encrypted, because automated safety checks need to read them.</li>
+            <li><strong>Safety checks:</strong> a collection becomes available only after its files pass automated checks: Cloudflare's CSAM Scanning Tool compares its images with lists of known child sexual abuse material, and Sightengine checks for violent and other prohibited content and for images that may show someone under 18 together with nudity (these are held for a person to review). Copies of the preview images (and of JPEG and PNG photos) are kept on Cloudflare for these checks and deleted with the collection. The checks also tell us whether a preview may show nudity, so it can be hidden. A file that can't be checked keeps its collection offline. We don't routinely look at shared files. When a collection is reported or flagged, we may review its reduced preview images. Collections that fail the checks stay blocked, and we report apparent child sexual abuse material to the authorities where the law requires.</li>
+            <li><strong>Reports and blocking:</strong> anyone with the link can report a collection on its web page or in the app. Reports are anonymous: we store the reason and a scrambled identifier of the browser session or app installation, so the same person can't report twice, but not who you are. In the app you can block the sender of a collection. Blocks are stored only on your device, and the sender isn't told. To make blocking possible, people with a link see a scrambled code that is the same for every link shared from one installation of Hyde. It can't be used to identify you.</li>
+            <li><strong>How long it is kept:</strong> a collection expires after 14 days, or sooner if you revoke the link in the app. Access stops immediately and the stored files are deleted. Collections blocked after a report or a failed check are kept until their normal 14-day expiry, in case they must be preserved for the authorities, and then deleted. A record without the files (title, folder names, sizes, check results and reports) is kept for 30 days after a collection ends.</li>
+            <li><strong>Verifying your subscription:</strong> to confirm Hyde Pro and limit the number of active collections, the app sends your anonymous subscription ID, a signed App Store transaction, and a random credential created on your device. We store only a scrambled (hashed) version of that credential. To apply sharing limits to your subscription as a whole, we also store a scrambled version of the App Store transaction ID that identifies your subscription.</li>
+            <li><strong>Genuine app check:</strong> Hyde uses Apple's App Attest to confirm that sharing requests come from the real Hyde app. Your device creates a key that never leaves it; our server stores that key's public part and a counter, linked to the random credential above. This contains no personal information.</li>
+            <li><strong>Recipients:</strong> when someone opens or imports a collection, the app records anonymous events (for example "preview opened" or "import completed") with a random identifier and no file names. These events are deleted after 30 days. Reporting a collection on the web uses a session cookie, and in the app uses the app's random credential, so the same person can't report it twice.</li>
+            <li><strong>Hosting:</strong> the collections service runs on Cloudflare, which processes requests, including IP addresses, to deliver and protect the service, and stores shared files in its Asia-Pacific region. We use IP addresses briefly to limit how many requests can be made; we don't store them.</li>
         </ul>
 
         <h3>Camera information feed and private browser</h3>
@@ -293,11 +297,13 @@
         </ul>
 
         <h2>5. Who We Share Information With</h2>
-        <p>We share information only with service providers that help us run Hyde, as described above: Apple, RevenueCat, PostHog, our collections hosting provider, and the safety-check providers named above. We may also disclose information when the law requires it.</p>
+        <p>We share information only with service providers that help us run Hyde, as described above: Apple, RevenueCat, PostHog, Cloudflare (which hosts shared collections), and the safety-check providers named above. We may also disclose information when the law requires it.</p>
 
         <h2>6. How Long We Keep Information</h2>
         <ul>
-            <li><strong>Shared collections:</strong> up to 14 days, or until you revoke the link.</li>
+            <li><strong>Shared collections:</strong> up to 14 days, or until you revoke the link. Blocked collections are kept until their 14-day expiry. A record without the files is kept for 30 more days.</li>
+            <li><strong>Sharing limits:</strong> usage counts linked to scrambled IDs are kept for about two months.</li>
+            <li><strong>App Attest keys:</strong> kept while your app installation uses sharing. Email us to have them deleted.</li>
             <li><strong>Collection open and import events:</strong> 30 days.</li>
             <li><strong>Analytics and diagnostics:</strong> only as long as they are useful for improving the app and fixing problems, after which they are deleted.</li>
             <li><strong>Subscription records:</strong> kept by Apple and RevenueCat as long as needed to provide your subscription and meet accounting obligations.</li>
@@ -318,7 +324,7 @@
         <p>Our service providers, including PostHog and RevenueCat, process data in the United States and may process it in other countries. Where required, they use appropriate safeguards for these transfers.</p>
 
         <h2>10. Children's Privacy</h2>
-        <p>Hyde is not directed to children under 13, or the minimum age required where they live. We do not knowingly collect personal information from children. If you believe a child has provided us with information, contact us and we will delete it.</p>
+        <p>Hyde is not directed to children under 13, or the minimum age required where they live. We do not knowingly collect personal information from children. If you believe a child has provided us with information, contact us and we will delete it. Shared collections may contain adult content and are for adults only. People under 18 must not share or import collections.</p>
 
         <h2>11. This Website</h2>
         <p>This website doesn't use cookies or analytics. Our web host may log standard request information, such as IP addresses, to deliver and protect the site.</p>
