@@ -219,10 +219,10 @@
     <!-- Content -->
     <div class="content">
         <h1>Hyde Privacy Policy</h1>
-        <p class="updated">Last updated: 28 October 2026. Applies to Hyde version 1.5 and later.</p>
+        <p class="updated">Last updated: 3 November 2026. Applies to Hyde version 1.5 and later.</p>
 
         <div class="highlight">
-            <p><strong>The short version:</strong> your vault (photos, videos, files and PINs) is encrypted and stays on your device. We can't see it. Hyde collects a limited amount of usage and diagnostic data so we can improve the app and fix problems. If you choose to share a collection, the photos and videos you share are uploaded to our servers until the link expires. This policy explains exactly what is collected and why.</p>
+            <p><strong>The short version:</strong> your vault (photos, videos, files and PINs) is encrypted and stays on your device. We can't see it. Hyde collects a limited amount of usage and diagnostic data so we can improve the app and fix problems. If you choose to share a collection, the photos and videos you share are uploaded to our servers until the link expires. If you connect your X account to save posts, we keep your X account ID and username and which posts you tag, but never the photos or videos. This policy explains exactly what is collected and why.</p>
         </div>
 
         <h2>1. What Stays on Your Device</h2>
@@ -272,6 +272,17 @@
             <li><strong>Hosting:</strong> the collections service runs on Cloudflare, which processes requests, including IP addresses, to deliver and protect the service, and stores shared files in its Asia-Pacific region. We use IP addresses briefly to limit how many requests can be made; we don't store them.</li>
         </ul>
 
+        <h3>Saving posts from X (optional, Hyde Pro)</h3>
+        <p>Nothing is shared with X, and nothing about your X account reaches us, unless you choose to connect your X account in Settings &rarr; Save from X. When you do:</p>
+        <ul>
+            <li><strong>Connecting your account:</strong> you sign in on X's own page. We receive your X account's numeric ID and username, never your password. X gives us an access token, which we use once to read your account ID and then revoke. We don't keep it. We store your X account ID and username with the scrambled (hashed) version of your app's random credential and of your subscription ID (see "Shared collections" above), so saves reach the right device and the daily limit applies to your subscription.</li>
+            <li><strong>Tagging a post:</strong> to save a post, you reply to it on X and tag @HydeSave. Your reply is public on X, like any reply, so anyone can see that you tagged @HydeSave. Our server finds tags from connected accounts through X's official API, and records your reply and the post you tagged (their IDs only) and when.</li>
+            <li><strong>Getting the photos and videos:</strong> when you next open Hyde, our server looks the post up through X's API and sends your device links to its photos and videos, which are hosted on X's servers. Your device downloads them directly from X and encrypts them in your vault. Our server never receives or stores the photos or videos. As with any website, X sees your device's IP address when it downloads them.</li>
+            <li><strong>How long it is kept:</strong> a save is deleted from our server once your device has collected it, or after 15 days. Your X account ID and username are kept until you disconnect. Disconnecting in Settings &rarr; Save from X deletes them and any saves you haven't collected yet. Folders already in your vault stay.</li>
+            <li><strong>How we use your X information:</strong> only to deliver the posts you save. We use X's official API under X's developer terms, and we don't use your X information for advertising, sell it, or use it to train AI models. X handles your X account and posts under <a href="https://x.com/en/privacy">X's privacy policy</a>.</li>
+            <li><strong>Hosting:</strong> Save from X runs on the same Cloudflare service as shared collections.</li>
+        </ul>
+
         <h3>Camera information feed and private browser</h3>
         <ul>
             <li>When the camera's information feed is shown, the app downloads public information: sports scores from ESPN, lottery results from Singapore Pools, news from Global Voices and fund holdings from iShares. These requests carry no cookies or personal information, but, as with any website, these providers can see your IP address.</li>
@@ -284,9 +295,10 @@
             <li>To find and fix crashes and bugs</li>
             <li>To verify subscriptions and provide Hyde Pro features</li>
             <li>To run shared collections and keep them safe</li>
+            <li>To deliver the posts you choose to save from X</li>
             <li>To meet legal obligations</li>
         </ul>
-        <p>Where data protection laws such as the GDPR apply, we rely on our legitimate interest in running and improving the app (for analytics and diagnostics), on providing the service you requested (for subscriptions and shared collections), and on legal obligations (for safety reports).</p>
+        <p>Where data protection laws such as the GDPR apply, we rely on our legitimate interest in running and improving the app (for analytics and diagnostics), on providing the service you requested (for subscriptions, shared collections and saving posts from X), and on legal obligations (for safety reports).</p>
 
         <h2>4. What We Don't Do</h2>
         <ul>
@@ -297,11 +309,12 @@
         </ul>
 
         <h2>5. Who We Share Information With</h2>
-        <p>We share information only with service providers that help us run Hyde, as described above: Apple, RevenueCat, PostHog, Cloudflare (which hosts shared collections), and the safety-check providers named above. We may also disclose information when the law requires it.</p>
+        <p>We share information only with service providers that help us run Hyde, as described above: Apple, RevenueCat, PostHog, Cloudflare (which hosts shared collections and Save from X), and the safety-check providers named above. If you save posts from X, our server asks X for the posts you tagged through X's API. We may also disclose information when the law requires it.</p>
 
         <h2>6. How Long We Keep Information</h2>
         <ul>
             <li><strong>Shared collections:</strong> up to 14 days, or until you revoke the link. Blocked collections are kept until their 14-day expiry. A record without the files is kept for 30 more days.</li>
+            <li><strong>Save from X:</strong> your X account ID and username until you disconnect; each tagged post until your device collects it, or up to 15 days.</li>
             <li><strong>Sharing limits:</strong> usage counts linked to scrambled IDs are kept for about two months.</li>
             <li><strong>App Attest keys:</strong> kept while your app installation uses sharing. Email us to have them deleted.</li>
             <li><strong>Collection open and import events:</strong> 30 days.</li>
@@ -313,6 +326,7 @@
         <ul>
             <li>If you don't use shared collections, none of your photos are uploaded.</li>
             <li>You can revoke a shared link at any time in the app.</li>
+            <li>You can disconnect your X account at any time in Settings &rarr; Save from X.</li>
             <li>Deleting the app deletes your vault from the device and stops the app from sending any data.</li>
             <li>Depending on where you live, you may have the right to access, correct or delete your information, to object to or limit how it is used, and to complain to your data protection authority. To make a request, email us. We don't collect your name or email in the app, so we may need details from you to find the data linked to your app.</li>
         </ul>
@@ -321,7 +335,7 @@
         <p>Your vault is encrypted on your device, and the app uses encrypted connections for everything it sends. No method of storage or transmission is completely secure, but we design Hyde so that your vault content is never available to us.</p>
 
         <h2>9. International Transfers</h2>
-        <p>Our service providers, including PostHog and RevenueCat, process data in the United States and may process it in other countries. Where required, they use appropriate safeguards for these transfers.</p>
+        <p>Our service providers, including PostHog and RevenueCat, and X when you save posts from it, process data in the United States and may process it in other countries. Where required, they use appropriate safeguards for these transfers.</p>
 
         <h2>10. Children's Privacy</h2>
         <p>Hyde is not directed to children under 13, or the minimum age required where they live. We do not knowingly collect personal information from children. If you believe a child has provided us with information, contact us and we will delete it. Shared collections may contain adult content and are for adults only. People under 18 must not share or import collections.</p>
